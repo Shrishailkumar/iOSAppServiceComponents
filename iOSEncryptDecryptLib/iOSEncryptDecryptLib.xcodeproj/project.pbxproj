@@ -7,80 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		096CA967288145A800FEDEF0 /* iOSEncryptDecryptLib.docc in Sources */ = {isa = PBXBuildFile; fileRef = 096CA966288145A800FEDEF0 /* iOSEncryptDecryptLib.docc */; };
-		096CA96D288145A800FEDEF0 /* iOSEncryptDecryptLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096CA962288145A800FEDEF0 /* iOSEncryptDecryptLib.framework */; };
-		096CA972288145A800FEDEF0 /* iOSEncryptDecryptLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096CA971288145A800FEDEF0 /* iOSEncryptDecryptLibTests.swift */; };
-		096CA973288145A800FEDEF0 /* iOSEncryptDecryptLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 096CA965288145A800FEDEF0 /* iOSEncryptDecryptLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		098336F7288325A70080D228 /* iOSEncryptDecryptLib.docc in Sources */ = {isa = PBXBuildFile; fileRef = 098336F6288325A70080D228 /* iOSEncryptDecryptLib.docc */; };
+		098336FD288325A70080D228 /* iOSEncryptDecryptLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098336F2288325A70080D228 /* iOSEncryptDecryptLib.framework */; };
+		09833702288325A70080D228 /* iOSEncryptDecryptLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09833701288325A70080D228 /* iOSEncryptDecryptLibTests.swift */; };
+		09833703288325A70080D228 /* iOSEncryptDecryptLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 098336F5288325A70080D228 /* iOSEncryptDecryptLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0983370D288325BD0080D228 /* EncryptDecryptFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0983370C288325BD0080D228 /* EncryptDecryptFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		096CA96E288145A800FEDEF0 /* PBXContainerItemProxy */ = {
+		098336FE288325A70080D228 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 096CA959288145A800FEDEF0 /* Project object */;
+			containerPortal = 098336E9288325A70080D228 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 096CA961288145A800FEDEF0;
+			remoteGlobalIDString = 098336F1288325A70080D228;
 			remoteInfo = iOSEncryptDecryptLib;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		096CA962288145A800FEDEF0 /* iOSEncryptDecryptLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSEncryptDecryptLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		096CA965288145A800FEDEF0 /* iOSEncryptDecryptLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSEncryptDecryptLib.h; sourceTree = "<group>"; };
-		096CA966288145A800FEDEF0 /* iOSEncryptDecryptLib.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = iOSEncryptDecryptLib.docc; sourceTree = "<group>"; };
-		096CA96C288145A800FEDEF0 /* iOSEncryptDecryptLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEncryptDecryptLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		096CA971288145A800FEDEF0 /* iOSEncryptDecryptLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEncryptDecryptLibTests.swift; sourceTree = "<group>"; };
+		098336F2288325A70080D228 /* iOSEncryptDecryptLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSEncryptDecryptLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		098336F5288325A70080D228 /* iOSEncryptDecryptLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSEncryptDecryptLib.h; sourceTree = "<group>"; };
+		098336F6288325A70080D228 /* iOSEncryptDecryptLib.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = iOSEncryptDecryptLib.docc; sourceTree = "<group>"; };
+		098336FC288325A70080D228 /* iOSEncryptDecryptLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEncryptDecryptLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09833701288325A70080D228 /* iOSEncryptDecryptLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEncryptDecryptLibTests.swift; sourceTree = "<group>"; };
+		0983370C288325BD0080D228 /* EncryptDecryptFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptDecryptFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		096CA95F288145A800FEDEF0 /* Frameworks */ = {
+		098336EF288325A70080D228 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		096CA969288145A800FEDEF0 /* Frameworks */ = {
+		098336F9288325A70080D228 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				096CA96D288145A800FEDEF0 /* iOSEncryptDecryptLib.framework in Frameworks */,
+				098336FD288325A70080D228 /* iOSEncryptDecryptLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		096CA958288145A800FEDEF0 = {
+		098336E8288325A70080D228 = {
 			isa = PBXGroup;
 			children = (
-				096CA964288145A800FEDEF0 /* iOSEncryptDecryptLib */,
-				096CA970288145A800FEDEF0 /* iOSEncryptDecryptLibTests */,
-				096CA963288145A800FEDEF0 /* Products */,
+				098336F4288325A70080D228 /* iOSEncryptDecryptLib */,
+				09833700288325A70080D228 /* iOSEncryptDecryptLibTests */,
+				098336F3288325A70080D228 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		096CA963288145A800FEDEF0 /* Products */ = {
+		098336F3288325A70080D228 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				096CA962288145A800FEDEF0 /* iOSEncryptDecryptLib.framework */,
-				096CA96C288145A800FEDEF0 /* iOSEncryptDecryptLibTests.xctest */,
+				098336F2288325A70080D228 /* iOSEncryptDecryptLib.framework */,
+				098336FC288325A70080D228 /* iOSEncryptDecryptLibTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		096CA964288145A800FEDEF0 /* iOSEncryptDecryptLib */ = {
+		098336F4288325A70080D228 /* iOSEncryptDecryptLib */ = {
 			isa = PBXGroup;
 			children = (
-				096CA965288145A800FEDEF0 /* iOSEncryptDecryptLib.h */,
-				096CA966288145A800FEDEF0 /* iOSEncryptDecryptLib.docc */,
+				098336F5288325A70080D228 /* iOSEncryptDecryptLib.h */,
+				098336F6288325A70080D228 /* iOSEncryptDecryptLib.docc */,
+				0983370C288325BD0080D228 /* EncryptDecryptFile.swift */,
 			);
 			path = iOSEncryptDecryptLib;
 			sourceTree = "<group>";
 		};
-		096CA970288145A800FEDEF0 /* iOSEncryptDecryptLibTests */ = {
+		09833700288325A70080D228 /* iOSEncryptDecryptLibTests */ = {
 			isa = PBXGroup;
 			children = (
-				096CA971288145A800FEDEF0 /* iOSEncryptDecryptLibTests.swift */,
+				09833701288325A70080D228 /* iOSEncryptDecryptLibTests.swift */,
 			);
 			path = iOSEncryptDecryptLibTests;
 			sourceTree = "<group>";
@@ -88,25 +91,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		096CA95D288145A800FEDEF0 /* Headers */ = {
+		098336ED288325A70080D228 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				096CA973288145A800FEDEF0 /* iOSEncryptDecryptLib.h in Headers */,
+				09833703288325A70080D228 /* iOSEncryptDecryptLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		096CA961288145A800FEDEF0 /* iOSEncryptDecryptLib */ = {
+		098336F1288325A70080D228 /* iOSEncryptDecryptLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 096CA976288145A800FEDEF0 /* Build configuration list for PBXNativeTarget "iOSEncryptDecryptLib" */;
+			buildConfigurationList = 09833706288325A70080D228 /* Build configuration list for PBXNativeTarget "iOSEncryptDecryptLib" */;
 			buildPhases = (
-				096CA95D288145A800FEDEF0 /* Headers */,
-				096CA95E288145A800FEDEF0 /* Sources */,
-				096CA95F288145A800FEDEF0 /* Frameworks */,
-				096CA960288145A800FEDEF0 /* Resources */,
+				098336ED288325A70080D228 /* Headers */,
+				098336EE288325A70080D228 /* Sources */,
+				098336EF288325A70080D228 /* Frameworks */,
+				098336F0288325A70080D228 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -114,46 +117,46 @@
 			);
 			name = iOSEncryptDecryptLib;
 			productName = iOSEncryptDecryptLib;
-			productReference = 096CA962288145A800FEDEF0 /* iOSEncryptDecryptLib.framework */;
+			productReference = 098336F2288325A70080D228 /* iOSEncryptDecryptLib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		096CA96B288145A800FEDEF0 /* iOSEncryptDecryptLibTests */ = {
+		098336FB288325A70080D228 /* iOSEncryptDecryptLibTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 096CA979288145A800FEDEF0 /* Build configuration list for PBXNativeTarget "iOSEncryptDecryptLibTests" */;
+			buildConfigurationList = 09833709288325A70080D228 /* Build configuration list for PBXNativeTarget "iOSEncryptDecryptLibTests" */;
 			buildPhases = (
-				096CA968288145A800FEDEF0 /* Sources */,
-				096CA969288145A800FEDEF0 /* Frameworks */,
-				096CA96A288145A800FEDEF0 /* Resources */,
+				098336F8288325A70080D228 /* Sources */,
+				098336F9288325A70080D228 /* Frameworks */,
+				098336FA288325A70080D228 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				096CA96F288145A800FEDEF0 /* PBXTargetDependency */,
+				098336FF288325A70080D228 /* PBXTargetDependency */,
 			);
 			name = iOSEncryptDecryptLibTests;
 			productName = iOSEncryptDecryptLibTests;
-			productReference = 096CA96C288145A800FEDEF0 /* iOSEncryptDecryptLibTests.xctest */;
+			productReference = 098336FC288325A70080D228 /* iOSEncryptDecryptLibTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		096CA959288145A800FEDEF0 /* Project object */ = {
+		098336E9288325A70080D228 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					096CA961288145A800FEDEF0 = {
+					098336F1288325A70080D228 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					096CA96B288145A800FEDEF0 = {
+					098336FB288325A70080D228 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 096CA95C288145A800FEDEF0 /* Build configuration list for PBXProject "iOSEncryptDecryptLib" */;
+			buildConfigurationList = 098336EC288325A70080D228 /* Build configuration list for PBXProject "iOSEncryptDecryptLib" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -161,26 +164,26 @@
 				en,
 				Base,
 			);
-			mainGroup = 096CA958288145A800FEDEF0;
-			productRefGroup = 096CA963288145A800FEDEF0 /* Products */;
+			mainGroup = 098336E8288325A70080D228;
+			productRefGroup = 098336F3288325A70080D228 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				096CA961288145A800FEDEF0 /* iOSEncryptDecryptLib */,
-				096CA96B288145A800FEDEF0 /* iOSEncryptDecryptLibTests */,
+				098336F1288325A70080D228 /* iOSEncryptDecryptLib */,
+				098336FB288325A70080D228 /* iOSEncryptDecryptLibTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		096CA960288145A800FEDEF0 /* Resources */ = {
+		098336F0288325A70080D228 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		096CA96A288145A800FEDEF0 /* Resources */ = {
+		098336FA288325A70080D228 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -190,34 +193,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		096CA95E288145A800FEDEF0 /* Sources */ = {
+		098336EE288325A70080D228 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				096CA967288145A800FEDEF0 /* iOSEncryptDecryptLib.docc in Sources */,
+				098336F7288325A70080D228 /* iOSEncryptDecryptLib.docc in Sources */,
+				0983370D288325BD0080D228 /* EncryptDecryptFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		096CA968288145A800FEDEF0 /* Sources */ = {
+		098336F8288325A70080D228 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				096CA972288145A800FEDEF0 /* iOSEncryptDecryptLibTests.swift in Sources */,
+				09833702288325A70080D228 /* iOSEncryptDecryptLibTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		096CA96F288145A800FEDEF0 /* PBXTargetDependency */ = {
+		098336FF288325A70080D228 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 096CA961288145A800FEDEF0 /* iOSEncryptDecryptLib */;
-			targetProxy = 096CA96E288145A800FEDEF0 /* PBXContainerItemProxy */;
+			target = 098336F1288325A70080D228 /* iOSEncryptDecryptLib */;
+			targetProxy = 098336FE288325A70080D228 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		096CA974288145A800FEDEF0 /* Debug */ = {
+		09833704288325A70080D228 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,7 +284,7 @@
 			};
 			name = Debug;
 		};
-		096CA975288145A800FEDEF0 /* Release */ = {
+		09833705288325A70080D228 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -337,7 +341,7 @@
 			};
 			name = Release;
 		};
-		096CA977288145A800FEDEF0 /* Debug */ = {
+		09833707288325A70080D228 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -365,7 +369,7 @@
 			};
 			name = Debug;
 		};
-		096CA978288145A800FEDEF0 /* Release */ = {
+		09833708288325A70080D228 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -393,9 +397,10 @@
 			};
 			name = Release;
 		};
-		096CA97A288145A800FEDEF0 /* Debug */ = {
+		0983370A288325A70080D228 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YU6WB94747;
@@ -409,9 +414,10 @@
 			};
 			name = Debug;
 		};
-		096CA97B288145A800FEDEF0 /* Release */ = {
+		0983370B288325A70080D228 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YU6WB94747;
@@ -428,34 +434,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		096CA95C288145A800FEDEF0 /* Build configuration list for PBXProject "iOSEncryptDecryptLib" */ = {
+		098336EC288325A70080D228 /* Build configuration list for PBXProject "iOSEncryptDecryptLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				096CA974288145A800FEDEF0 /* Debug */,
-				096CA975288145A800FEDEF0 /* Release */,
+				09833704288325A70080D228 /* Debug */,
+				09833705288325A70080D228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		096CA976288145A800FEDEF0 /* Build configuration list for PBXNativeTarget "iOSEncryptDecryptLib" */ = {
+		09833706288325A70080D228 /* Build configuration list for PBXNativeTarget "iOSEncryptDecryptLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				096CA977288145A800FEDEF0 /* Debug */,
-				096CA978288145A800FEDEF0 /* Release */,
+				09833707288325A70080D228 /* Debug */,
+				09833708288325A70080D228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		096CA979288145A800FEDEF0 /* Build configuration list for PBXNativeTarget "iOSEncryptDecryptLibTests" */ = {
+		09833709288325A70080D228 /* Build configuration list for PBXNativeTarget "iOSEncryptDecryptLibTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				096CA97A288145A800FEDEF0 /* Debug */,
-				096CA97B288145A800FEDEF0 /* Release */,
+				0983370A288325A70080D228 /* Debug */,
+				0983370B288325A70080D228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 096CA959288145A800FEDEF0 /* Project object */;
+	rootObject = 098336E9288325A70080D228 /* Project object */;
 }
