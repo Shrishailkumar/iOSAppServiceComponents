@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/Shrishailkumar/iOSAppServiceComponents/tree/iOSEncryptDecryptComponent", :tag => "1.0.0" }
+  spec.source       = { :git => "https://github.com/Shrishailkumar/iOSAppServiceComponents/iOSEncryptDecryptComponent", :tag => "1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
