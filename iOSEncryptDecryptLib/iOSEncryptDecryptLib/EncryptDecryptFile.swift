@@ -9,13 +9,14 @@ import Foundation
 import CommonCrypto
 import CryptoKit
 
-// -------- Common Crypto -----------
+// -------- For Common Crypto -----------
+
 protocol Cryptable {
     func encrypt(_ string: String) throws -> Data
     func decrypt(_ data: Data) throws -> String
 }
-//
-public class AESClass : Cryptable {
+
+public class CommonCryptoKitClass : Cryptable {
 
      private let key: Data
      private let ivSize: Int         = kCCBlockSizeAES128
@@ -130,7 +131,7 @@ public class AESClass : Cryptable {
 
 }
 
-extension AESClass {
+extension CommonCryptoKitClass {
     enum Error: Swift.Error {
         case invalidKeySize
         case generateRandomIVFailed
@@ -140,7 +141,7 @@ extension AESClass {
     }
 }
 
-private extension AESClass {
+private extension CommonCryptoKitClass {
 
     func generateRandomIV(for data: inout Data) throws {
 
@@ -164,7 +165,7 @@ private extension AESClass {
 }
 
 
-//-------- Cryptokit-----------
+//-------- For Cryptokit-----------
 
 public class CryptoKitClass {
 
@@ -205,59 +206,81 @@ public class CryptoKitClass {
             return "Error decrypting message: \(error.localizedDescription)"
         }
     }
-    
 }
 
-//class chatEncryption {
-//
-//
-//    func generatePrivateKey() -> P256.KeyAgreement.PrivateKey {
-//        let privateKey = P256.KeyAgreement.PrivateKey()
-//        return privateKey
-//    }
-//
-//    func exportPrivateKey(_ privateKey: P256.KeyAgreement.PrivateKey) -> String {
-//        let rawPrivateKey = privateKey.rawRepresentation
-//        let privateKeyBase64 = rawPrivateKey.base64EncodedString()
-//        let percentEncodedPrivateKey = privateKeyBase64.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
-//        return percentEncodedPrivateKey
-//    }
-//
-//    func importPrivateKey(_ privateKey: String) throws -> P256.KeyAgreement.PrivateKey {
-//        let privateKeyBase64 = privateKey.removingPercentEncoding!
-//        let rawPrivateKey = Data(base64Encoded: privateKeyBase64)!
-//        return try P256.KeyAgreement.PrivateKey(rawRepresentation: rawPrivateKey)
-//    }
-//
-//    func deriveSymmetricKey(privateKey: P256.KeyAgreement.PrivateKey, publicKey: P256.KeyAgreement.PublicKey) throws -> SymmetricKey {
-//        let sharedSecret = try privateKey.sharedSecretFromKeyAgreement(with: publicKey)
-//
-//        let symmetricKey = sharedSecret.hkdfDerivedSymmetricKey(
-//            using: SHA256.self,
-//            salt: "My Key Agreement Salt".data(using: .utf8)!,
-//            sharedInfo: Data(),
-//            outputByteCount: 32
-//        )
-//
-//        return symmetricKey
-//    }
-//
-//  public func exportPublicKey(_ publicKey: P256.KeyAgreement.PublicKey) -> String {
-//        let rawPublicKey = publicKey.rawRepresentation
-//        let base64PublicKey = rawPublicKey.base64EncodedString()
-//        let encodedPublicKey = base64PublicKey.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
-//        return encodedPublicKey
-//    }
-//
-//
-//     public func importPublicKey(_ publicKey: String) throws -> P256.KeyAgreement.PublicKey {
-//            let base64PublicKey = publicKey.removingPercentEncoding!
-//            let rawPublicKey = Data(base64Encoded: base64PublicKey)!
-//            let publicKey = try P256.KeyAgreement.PublicKey(rawRepresentation: rawPublicKey)
-//            return publicKey
-//        }
-//
-//}
+
+
+
+public class CryptoAuthentication {
+    
+//------------------AUTHENTICATE---------------------------
+//--------------- Hash-based Message Authentication Code
+//--------------- The HMAC process mixes a secret key with the message data and hashes the result. The hash value is mixed with the secret key again, and then hashed a second time.
+//---------------
+//------------------AUTHENTICATE---------------------------
+    
+
+    let password : String!
+    public init(password: String)
+    {
+        self.password = password
+    }
+
+    public func hashHmacSHA512CommonCrypto() -> String? {
+        // Create the password hash
+        var digest = Data(count: Int(CC_SHA512_DIGEST_LENGTH))
+        digest.withUnsafeMutableBytes {mutableBytes in
+            CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA512), password, password.utf8.count, password, password.utf8.count, mutableBytes.baseAddress)
+        }
+        return formatPassword(digest)
+    }
+
+    // CrytoKit
+    public func hashHmacSHA512CryptoKit() -> String? {
+        // Create the hash
+        let passwordData = password.data(using: .utf8)!
+        let symmetricKey = SymmetricKey(data: passwordData)
+        let passwordHashDigest = HMAC<SHA512>.authenticationCode(for: passwordData, using: symmetricKey)
+        return formatPassword(Data(passwordHashDigest))
+    }
+
+//----------------------HASHING-----------------------------
+//--------------- Hashing algorithm used to convert text of any length into a fixed-size string.
+//--------------- Each output produces a SHA-512 length of 512 bits (64 bytes). This algorithm is commonly used for email addresses hashing, password hashing, and digital record verification.
+//----------------------HASHING-----------------------------
+
+
+    // CommonCrypto
+    public func hashSha512CommonCrypto() -> String? {
+        // Create the password hash
+        var digest = Data(count: Int(CC_SHA512_DIGEST_LENGTH))
+        digest.withUnsafeMutableBytes {mutableBytes in
+            CC_SHA512(password, CC_LONG(password.utf8.count), mutableBytes.bindMemory(to: UInt8.self).baseAddress)
+        }
+        return formatPassword(digest)
+    }
+
+    // CrytoKit
+    public func hashSha512CryptoKit() -> String? {
+        // Create the hash
+        let passwordData = password.data(using: .utf8)!
+        let passwordHashDigest = SHA512.hash(data: passwordData)
+        return formatPassword(Data(passwordHashDigest))
+    }
+
+    // Common Password Format
+    func formatPassword(_ password: Data) -> String {
+        var passwordString : String = password.map { String(format: "%02x", $0) }.joined()
+        // Add a dash after every 8 characters
+        var index = passwordString.index(passwordString.startIndex, offsetBy: 8)
+        repeat {
+            passwordString.insert("-", at: index)
+            passwordString.formIndex(&index, offsetBy: 9)
+        } while index < passwordString.endIndex
+        return passwordString
+    }
+
+}
 
 
 
