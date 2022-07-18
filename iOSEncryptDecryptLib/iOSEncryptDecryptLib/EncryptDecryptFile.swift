@@ -9,7 +9,93 @@ import Foundation
 import CommonCrypto
 import CryptoKit
 
+
+//-------- For Cryptokit-----------
+
+public class CryptoKitClass {
+
+    var passowrdString: String!
+    let randomKey = SymmetricKey(size: .bits256)
+    
+    public init(passowrdString: String) {
+            self.passowrdString = passowrdString
+    }
+    
+    public func encryptFunc() throws -> String {
+        let textData = passowrdString.data(using: .utf8)!
+        let encrypted = try AES.GCM.seal(textData, using: randomKey)
+        return encrypted.combined!.base64EncodedString()
+    }
+
+    public func decryptFunc() -> String {
+        do {
+            guard let data = Data(base64Encoded: try encryptFunc()) else {
+                return "Could not decode text: \(passowrdString ?? "")"
+            }
+
+            let sealedBox = try AES.GCM.SealedBox(combined: data)
+            let decryptedData = try AES.GCM.open(sealedBox, using: randomKey)
+
+            guard let text = String(data: decryptedData, encoding: .utf8) else {
+                return "Could not decode data: \(decryptedData)"
+            }
+
+            return text
+        } catch let error {
+            return "Error decrypting message: \(error.localizedDescription)"
+        }
+    }
+    
+    
+/*------------------AUTHENTICATE---------------------------
+
+--------------- Hash-based Message Authentication Code
+--------------- The HMAC process mixes a secret key with the message data and hashes the result. The hash value is mixed with the secret key again, and then hashed a second time.
+
+------------------AUTHENTICATE---------------------------*/
+
+
+        // CrytoKit
+        public func hashHmacSHA512CryptoKit() -> String? {
+            // Create the hash
+            let passwordData = passowrdString.data(using: .utf8)!
+            let symmetricKey = SymmetricKey(data: passwordData)
+            let passwordHashDigest = HMAC<SHA512>.authenticationCode(for: passwordData, using: symmetricKey)
+            return formatPassword(Data(passwordHashDigest))
+        }
+
+/*----------------------HASHING-----------------------------
+--------------- Hashing algorithm used to convert text of any length into a fixed-size string.
+--------------- Each output produces a SHA-512 length of 512 bits (64 bytes). This algorithm is commonly used for email addresses hashing, password hashing, and digital record verification.
+----------------------HASHING-----------------------------*/
+
+
+        // CrytoKit
+        public func hashSha512CryptoKit() -> String? {
+            // Create the hash
+            let passwordData = passowrdString.data(using: .utf8)!
+            let passwordHashDigest = SHA512.hash(data: passwordData)
+            return formatPassword(Data(passwordHashDigest))
+        }
+
+        // Common Password Format
+        func formatPassword(_ password: Data) -> String {
+            var passwordString : String = password.map { String(format: "%02x", $0) }.joined()
+            // Add a dash after every 8 characters
+            var index = passwordString.index(passwordString.startIndex, offsetBy: 8)
+            repeat {
+                passwordString.insert("-", at: index)
+                passwordString.formIndex(&index, offsetBy: 9)
+            } while index < passwordString.endIndex
+            return passwordString
+        }
+    
+    
+}
+
+
 // -------- For Common Crypto -----------
+
 
 protocol Cryptable {
     func encrypt(_ string: String) throws -> Data
@@ -28,7 +114,27 @@ public class CommonCryptoKitClass : Cryptable {
         }
         self.key = Data(keyString.utf8)
     }
-
+    
+// CommonCrypto
+//    public func hashSha512CommonCrypto() -> String? {
+//        // Create the password hash
+//        var digest = Data(count: Int(CC_SHA512_DIGEST_LENGTH))
+//        digest.withUnsafeMutableBytes {mutableBytes in
+//            CC_SHA512(passowrdString, CC_LONG(passowrdString.utf8.count), mutableBytes.bindMemory(to: UInt8.self).baseAddress)
+//        }
+//        return formatPassword(digest)
+//    }
+//
+//
+//    public func hashHmacSHA512CommonCrypto() -> String? {
+//        // Create the password hash
+//        var digest = Data(count: Int(CC_SHA512_DIGEST_LENGTH))
+//        digest.withUnsafeMutableBytes {mutableBytes in
+//            CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA512), passowrdString, passowrdString.utf8.count, passowrdString, passowrdString.utf8.count, mutableBytes.baseAddress)
+//        }
+//        return formatPassword(digest)
+//    }
+    
    public func encrypt(_ string: String) throws -> Data {
        let dataToEncrypt = Data(string.utf8)
 
@@ -163,125 +269,5 @@ private extension CommonCryptoKitClass {
         }
     }
 }
-
-
-//-------- For Cryptokit-----------
-
-public class CryptoKitClass {
-
-    var textString: String!
-
-    
-    let randomKey = SymmetricKey(size: .bits256)
-    public struct PublicKeyExtraData: Codable {
-        var publicKey: String?
-
-    }
-    
-    public init(textString: String) {
-            self.textString = textString
-    }
-    
-    public func encryptFunc() throws -> String {
-        let textData = textString.data(using: .utf8)!
-        let encrypted = try AES.GCM.seal(textData, using: randomKey)
-        return encrypted.combined!.base64EncodedString()
-    }
-
-    public func decryptFunc() -> String {
-        do {
-            guard let data = Data(base64Encoded: try encryptFunc()) else {
-                return "Could not decode text: \(textString ?? "")"
-            }
-
-            let sealedBox = try AES.GCM.SealedBox(combined: data)
-            let decryptedData = try AES.GCM.open(sealedBox, using: randomKey)
-
-            guard let text = String(data: decryptedData, encoding: .utf8) else {
-                return "Could not decode data: \(decryptedData)"
-            }
-
-            return text
-        } catch let error {
-            return "Error decrypting message: \(error.localizedDescription)"
-        }
-    }
-}
-
-
-
-
-public class CryptoAuthentication {
-    
-//------------------AUTHENTICATE---------------------------
-//--------------- Hash-based Message Authentication Code
-//--------------- The HMAC process mixes a secret key with the message data and hashes the result. The hash value is mixed with the secret key again, and then hashed a second time.
-//---------------
-//------------------AUTHENTICATE---------------------------
-    
-
-    let password : String!
-    public init(password: String)
-    {
-        self.password = password
-    }
-
-    public func hashHmacSHA512CommonCrypto() -> String? {
-        // Create the password hash
-        var digest = Data(count: Int(CC_SHA512_DIGEST_LENGTH))
-        digest.withUnsafeMutableBytes {mutableBytes in
-            CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA512), password, password.utf8.count, password, password.utf8.count, mutableBytes.baseAddress)
-        }
-        return formatPassword(digest)
-    }
-
-    // CrytoKit
-    public func hashHmacSHA512CryptoKit() -> String? {
-        // Create the hash
-        let passwordData = password.data(using: .utf8)!
-        let symmetricKey = SymmetricKey(data: passwordData)
-        let passwordHashDigest = HMAC<SHA512>.authenticationCode(for: passwordData, using: symmetricKey)
-        return formatPassword(Data(passwordHashDigest))
-    }
-
-//----------------------HASHING-----------------------------
-//--------------- Hashing algorithm used to convert text of any length into a fixed-size string.
-//--------------- Each output produces a SHA-512 length of 512 bits (64 bytes). This algorithm is commonly used for email addresses hashing, password hashing, and digital record verification.
-//----------------------HASHING-----------------------------
-
-
-    // CommonCrypto
-    public func hashSha512CommonCrypto() -> String? {
-        // Create the password hash
-        var digest = Data(count: Int(CC_SHA512_DIGEST_LENGTH))
-        digest.withUnsafeMutableBytes {mutableBytes in
-            CC_SHA512(password, CC_LONG(password.utf8.count), mutableBytes.bindMemory(to: UInt8.self).baseAddress)
-        }
-        return formatPassword(digest)
-    }
-
-    // CrytoKit
-    public func hashSha512CryptoKit() -> String? {
-        // Create the hash
-        let passwordData = password.data(using: .utf8)!
-        let passwordHashDigest = SHA512.hash(data: passwordData)
-        return formatPassword(Data(passwordHashDigest))
-    }
-
-    // Common Password Format
-    func formatPassword(_ password: Data) -> String {
-        var passwordString : String = password.map { String(format: "%02x", $0) }.joined()
-        // Add a dash after every 8 characters
-        var index = passwordString.index(passwordString.startIndex, offsetBy: 8)
-        repeat {
-            passwordString.insert("-", at: index)
-            passwordString.formIndex(&index, offsetBy: 9)
-        } while index < passwordString.endIndex
-        return passwordString
-    }
-
-}
-
-
 
 
