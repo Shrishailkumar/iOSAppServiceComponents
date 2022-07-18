@@ -65,8 +65,10 @@ public class CryptoKitClass {
         }
 
 /*----------------------HASHING-----------------------------
+ 
 --------------- Hashing algorithm used to convert text of any length into a fixed-size string.
 --------------- Each output produces a SHA-512 length of 512 bits (64 bytes). This algorithm is commonly used for email addresses hashing, password hashing, and digital record verification.
+ 
 ----------------------HASHING-----------------------------*/
 
 
