@@ -213,7 +213,7 @@ class ZQRScannerView: UIView {
         session.addInput(videoInput)
         metadataOutput.setMetadataObjectsDelegate(self, queue: metadataQueue)
         session.addOutput(metadataOutput)
-        metadataOutput.metadataObjectTypes = [.qr]
+        metadataOutput.metadataObjectTypes = [.qr, .aztec, .dataMatrix, .ean8, .ean13, .pdf417]
 
         videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
         videoDataOutput.setSampleBufferDelegate(self, queue: videoDataQueue)
