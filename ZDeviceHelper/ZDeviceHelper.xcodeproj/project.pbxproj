@@ -12,7 +12,6 @@
 		BD4382E52886A82000D7D1F3 /* ZDeviceHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4382E42886A82000D7D1F3 /* ZDeviceHelperTests.swift */; };
 		BD4382F02886A8DD00D7D1F3 /* ZDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4382EF2886A8DD00D7D1F3 /* ZDeviceHelper.swift */; };
 		BD4383442886ABDD00D7D1F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4383432886ABDD00D7D1F3 /* AppDelegate.swift */; };
-		BD4383462886ABDD00D7D1F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4383452886ABDD00D7D1F3 /* SceneDelegate.swift */; };
 		BD4383482886ABDD00D7D1F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4383472886ABDD00D7D1F3 /* ViewController.swift */; };
 		BD43834B2886ABDD00D7D1F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4383492886ABDD00D7D1F3 /* Main.storyboard */; };
 		BD43834D2886ABDE00D7D1F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD43834C2886ABDE00D7D1F3 /* Assets.xcassets */; };
@@ -60,7 +59,6 @@
 		BD4382EF2886A8DD00D7D1F3 /* ZDeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDeviceHelper.swift; sourceTree = "<group>"; };
 		BD4383412886ABDD00D7D1F3 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4383432886ABDD00D7D1F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD4383452886ABDD00D7D1F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD4383472886ABDD00D7D1F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD43834A2886ABDD00D7D1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD43834C2886ABDE00D7D1F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				BD4383432886ABDD00D7D1F3 /* AppDelegate.swift */,
-				BD4383452886ABDD00D7D1F3 /* SceneDelegate.swift */,
 				BD4383472886ABDD00D7D1F3 /* ViewController.swift */,
 				BD4383492886ABDD00D7D1F3 /* Main.storyboard */,
 				BD43834C2886ABDE00D7D1F3 /* Assets.xcassets */,
@@ -306,7 +303,6 @@
 			files = (
 				BD4383482886ABDD00D7D1F3 /* ViewController.swift in Sources */,
 				BD4383442886ABDD00D7D1F3 /* AppDelegate.swift in Sources */,
-				BD4383462886ABDD00D7D1F3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -455,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -479,6 +475,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,6 +485,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zensar.ZDeviceHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -506,6 +504,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,6 +514,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zensar.ZDeviceHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -577,7 +577,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,7 +605,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
