@@ -36,18 +36,18 @@ class ViewController: UIViewController {
         print(device.isZoomed)
         
         //Get current battery state
-        print(device.batteryState)
+        print(device.batteryState ?? "")
         
         //Get current battery level
         print(device.batteryLevel)
         
-        //Return device has camera has camera
+        //Return device has camera
         print(device.hasCamera)
         
-        //Return device has camera has camera
+        //Return device has Telephoto camera
         print(device.hasTelephotoCamera)
         
-        //Return device has camera has camera
+        //Return device has ultra wide camera
         print(device.hasUltraWideCamera)
 
         //Return device is capable of 3d Touch

@@ -18,6 +18,7 @@
 		BD4383502886ABDE00D7D1F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD43834E2886ABDE00D7D1F3 /* LaunchScreen.storyboard */; };
 		BD4383562886AC0100D7D1F3 /* ZDeviceHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4382D52886A82000D7D1F3 /* ZDeviceHelper.framework */; };
 		BD4383572886AC0100D7D1F3 /* ZDeviceHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD4382D52886A82000D7D1F3 /* ZDeviceHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDD710F128898E3C00280ABF /* ZDeviceHelper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = BDD710F028898E3C00280ABF /* ZDeviceHelper.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		BD43834C2886ABDE00D7D1F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD43834F2886ABDE00D7D1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD4383512886ABDE00D7D1F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDD710F028898E3C00280ABF /* ZDeviceHelper.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZDeviceHelper.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		BD4382D72886A82000D7D1F3 /* ZDeviceHelper */ = {
 			isa = PBXGroup;
 			children = (
+				BDD710F028898E3C00280ABF /* ZDeviceHelper.podspec */,
 				BD4382D92886A82000D7D1F3 /* ZDeviceHelper.docc */,
 				BD4382EF2886A8DD00D7D1F3 /* ZDeviceHelper.swift */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD710F128898E3C00280ABF /* ZDeviceHelper.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

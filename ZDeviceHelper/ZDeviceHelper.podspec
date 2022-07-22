@@ -7,10 +7,10 @@ Pod::Spec.new do |s|
   s.description      = "This library contains all information related to a device which helps a developer to use it in their project and get device information that is required in their project."
 
   s.homepage         = 'https://www.zensar.com/'
-  s.license          = 'Zensar'
+  s.license          = 'MIT'
   s.author           = { 'shekharvishwazensar' => 'shekhar.vishwakarma@zensar.com' }
   s.source           = {
-    :git => 'https://github.com/Shrishailkumar/iOSAppServiceComponents/tree/ZDeviceHelper/ZDeviceHelper',
+    :git => 'https://github.com/shekharvishwazensar/ZDeviceHelper',
     :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
