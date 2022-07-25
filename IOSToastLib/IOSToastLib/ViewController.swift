@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 //MARK: Add Toast method function in UIView Extension so can use in whole project.
 extension UIView
 {
-    func showToast(toastMessage:String,duration:CGFloat)
+    open func showToast(toastMessage:String,duration:CGFloat)
     {
         //View to blur bg and stopping user interaction
         let bgView = UIView(frame: self.frame)

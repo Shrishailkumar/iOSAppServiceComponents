@@ -1,0 +1,6 @@
+framework module Pods_IOSToastLib_IOSToastLibUITests {
+  umbrella header "Pods-IOSToastLib-IOSToastLibUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
